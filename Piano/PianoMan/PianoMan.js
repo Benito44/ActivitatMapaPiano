@@ -8,32 +8,27 @@ const whiteKeys = document.querySelectorAll(".white");
 const blackKeys = document.querySelectorAll(".black");
 let currentIndex = 0;
 function playPianoKeySound(key, soundFile) {
-    let sound = new Audio(soundFile);
-    playSound(sound);
+        let sound = new Audio(soundFile);
+        playSound(sound);
 
 }
 
 
 
 function setupPianoKey(element, key, soundFile) {
-    let isShiftPressed = false;
-
-    element.addEventListener('click', function (event) {
+    element.addEventListener('touchstart', function (event) {
         if (event.shiftKey) {
-        const currentIndex = keysData.findIndex(item => item.element === element);
-        const prevIndex = (currentIndex - 1 + keysData.length) % keysData.length;
-        const nextIndex = (currentIndex + 1) % keysData.length;
-
-        console.log(keysData[prevIndex].key, keysData[prevIndex].soundFile);
-        console.log(keysData[nextIndex].key, keysData[nextIndex].soundFile);
-
-        playPianoKeySound(keysData[prevIndex].key, keysData[prevIndex].soundFile);
-        keysData[prevIndex].element.classList.add('activa');
-        setTimeout(() => keysData[prevIndex].element.classList.remove('activa'), 300);
-
-        playPianoKeySound(keysData[nextIndex].key, keysData[nextIndex].soundFile);
-        keysData[nextIndex].element.classList.add('activa');
-        setTimeout(() => keysData[nextIndex].element.classList.remove('activa'), 300);
+            const currentIndex = keysData.findIndex(item => item.element === element);
+            const prevIndex = (currentIndex - 1 + keysData.length) % keysData.length;
+            const nextIndex = (currentIndex + 1) % keysData.length;
+    
+            playPianoKeySound(keysData[prevIndex].key, keysData[prevIndex].soundFile);
+            keysData[prevIndex].element.classList.add('activa');
+            setTimeout(() => keysData[prevIndex].element.classList.remove('activa'), 300);
+    
+            playPianoKeySound(keysData[nextIndex].key, keysData[nextIndex].soundFile);
+            keysData[nextIndex].element.classList.add('activa');
+            setTimeout(() => keysData[nextIndex].element.classList.remove('activa'), 300);
 
         } else {
             playPianoKeySound(key, soundFile);
@@ -42,25 +37,24 @@ function setupPianoKey(element, key, soundFile) {
         }
     });
 
+    
     window.addEventListener('keydown', function(event) {
         if (event.code === key) {
             if (event.shiftKey){
                 console.log("aiasjnkasjnkasjhhiuasui");
-            }else{
+            } else {
                 playPianoKeySound(key, soundFile);
                 element.classList.add('activa');
                 setTimeout(() => element.classList.remove('activa'), 300);
-    
             }
-
         }
     });
+    
     window.addEventListener('keyup', function(event) {
         if (event.code === key) {
             setTimeout(() => element.classList.remove('activa'), 300);
-    }    });
-
-
+        }
+    });
 }
 function posarAtributs(element, atributs) {
 	for (const [key, value] of Object.entries(atributs)) {
@@ -70,6 +64,7 @@ function posarAtributs(element, atributs) {
 
 const keysData = [
     { element: document.getElementById('k65'), key: 'KeyA', soundFile: 'a1.mp3' },
+    {element: document.getElementById('k65'), key: 'KeyZ', soundFile: 'a1.mp3' },
     { element: document.getElementById('k83'), key: 'KeyS', soundFile: 'a2.mp3' },
 	{ element: document.getElementById('k68'), key: 'KeyD', soundFile: 'b1.mp3' },
     { element: document.getElementById('k70'), key: 'KeyF', soundFile: 'b2.mp3' },
@@ -102,7 +97,6 @@ keysData.forEach(keyData => {
 
 function playSound(sound) {
   sound.play();
-  sound.currentTime = 0;
 }
 
 function init() {
