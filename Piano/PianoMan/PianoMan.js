@@ -16,7 +16,43 @@ function playPianoKeySound(key, soundFile) {
 
 
 function setupPianoKey(element, key, soundFile) {
+    let isClicked = false;
+
+    function playAndReset(event) {
+        if (isClicked) {
+            // Encuentra el elemento de texto correspondiente
+            const clickedKeyId = event.target.id;
+            const textId = clickedKeyId.replace('k', 'c');
+            const textElement = document.getElementById(textId);
+
+            // Si encuentra el elemento de texto, procede
+            if (textElement) {
+                const textContent = textElement.textContent;
+
+                // Busca el elemento audio correspondiente por el contenido del texto
+                const audioElement = document.getElementById(textContent);
+
+                // Reproduce el audio asociado
+                playPianoKeySound(audioElement.id, audioElement.src);
+
+                // Añade la clase 'activa' al elemento
+                element.classList.add('activa');
+
+                // Restablece el estado después de un tiempo
+                setTimeout(() => {
+                    isClicked = false;
+                    // Elimina la clase 'activa' después del tiempo de espera
+                    element.classList.remove('activa');
+                }, 300);
+            }
+        
+    }
+    }
+
     element.addEventListener('touchstart', function (event) {
+        // Detiene la propagación del evento para evitar ejecuciones múltiples
+        event.stopPropagation();
+
         if (event.shiftKey) {
             const currentIndex = keysData.findIndex(item => item.element === element);
             const prevIndex = (currentIndex - 1 + keysData.length) % keysData.length;
@@ -28,39 +64,41 @@ function setupPianoKey(element, key, soundFile) {
     
             playPianoKeySound(keysData[nextIndex].key, keysData[nextIndex].soundFile);
             keysData[nextIndex].element.classList.add('activa');
-            setTimeout(() => keysData[nextIndex].element.classList.remove('activa'), 300);
-
+            setTimeout(() => keysData[nextIndex].element.classList.remove('activa'), 300);            
         } else {
+
+            // Verifica si ya se hizo clic recientemente
+            if (!isClicked) {
+                isClicked = true;
+                playAndReset(event);
+            }
+        }
+    });
+
+
+    window.addEventListener('keydown', function(event) {
+        if (event.code === key || (event.code === 'KeyK' && key === 'KeyR') || (event.code === 'KeyL' && key === 'KeyT') || (event.code === 'Semicolon' && key === 'KeyY') 
+        || (event.code === 'KeyQ' && key === 'KeyG') || (event.code === 'KeyW' && key === 'KeyH') || (event.code === 'KeyE' && key === 'KeyJ')) {
             playPianoKeySound(key, soundFile);
             element.classList.add('activa');
             setTimeout(() => element.classList.remove('activa'), 300);
         }
     });
-
     
-    window.addEventListener('keydown', function(event) {
-        if (event.code === key) {
-            if (event.shiftKey){
-                console.log("aiasjnkasjnkasjhhiuasui");
-            } else {
-                playPianoKeySound(key, soundFile);
-                element.classList.add('activa');
-                setTimeout(() => element.classList.remove('activa'), 300);
-            }
-        }
-    });
     
     window.addEventListener('keyup', function(event) {
         if (event.code === key) {
             setTimeout(() => element.classList.remove('activa'), 300);
         }
     });
+
 }
 function posarAtributs(element, atributs) {
 	for (const [key, value] of Object.entries(atributs)) {
 		element.setAttribute(key, value);
 	}
   }
+
 
 const keysData = [
     { element: document.getElementById('k65'), key: 'KeyA', soundFile: 'a1.mp3' },
@@ -90,16 +128,26 @@ const keysData = [
 	{ element: document.getElementById('k48'), key: 'Digit0', soundFile: 'g2s.mp3' },
 ];
 
+
 keysData.forEach(keyData => {
     setupPianoKey(keyData.element, keyData.key, keyData.soundFile);
 });
-
 
 function playSound(sound) {
   sound.play();
 }
 
 function init() {
-	TouchEmulator();
+    const keyIds = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+
+    const soundFiles = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2', 'd1', 'd2', 'e1', 'e2', 'f1', 'f2', 'g1', 'g2', 'a1s', 'a2s', 'c1s', 'c2s', 'd1s', 'd2s', 'f1s', 'f2s', 'g1s', 'g2s'];
+    // Crear los audios
+    for (let i = 0; i < keyIds.length; i++) {
+        const audioElement = document.createElement('audio');
+        audioElement.id = keyIds[i];
+        audioElement.src = `${soundFiles[i]}.mp3`;
+        document.body.appendChild(audioElement);
+    }
+    TouchEmulator();
 }
 init();
