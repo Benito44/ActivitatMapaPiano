@@ -5,11 +5,15 @@
     <title>Title</title>
     <script type="module" src="mapes.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="estils.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div id="mapa">
-    <svg id="Catalunya" style="stroke:#111111;stroke-width:.5;fill:#eeeeee" xmlns="http://www.w3.org/2000/svg" height="600" width="640" version="1.0" viewBox="0 0 640 600">
+    <svg id="MapToRead" style="stroke:#111111;stroke-width:.5;fill:#eeeeee" xmlns="http://www.w3.org/2000/svg" height="1100" width="1200" version="1.0" viewBox="0 0 640 600">
         <path d="m141 23.2-3 1.4h-2l-1 2.3-2 1.7v2.2l1 .6v3.9l1 1.8-3 1.5-1 2.2-1 1 2 1.3 2 .8-2 1-1 1.1-2 2.6 3 .3 1 .5v1.8l1 1.2v1.7l1 .4 1 1.4-1 .7 1 2.9-1 1.3v2.9l-1 .3-1-.3h-1l2 1.8 1 .3 1 3.1 1 1.5 1 .6 1 3.6v4.2l2 1.7 3 1.1 2 .7 2-.5 1 .8 1 .2 5-1.1 3-.6 1 .3 1 1 1 2.1 2-.6 1-1.2 1-1.1 2-1 3-1.1v-1.4l1 .7 2 .6v3.6l2 .3 1 .7v1.4l2 1.5 1 1 2 .3 1 .3 2-1.4v-1.3l1-.8 1-2.9h-1v-4.2l1-1.5v-2.4l3-6.5v-1.3l-1-2.1 1-1.8 2-1.1 1-2.1 2 1 3-.7-2-3.2 2-1.3v-5l1-1.2h-1v-3.4l1-1.9v-1.6l-1 .3-3-1.5-3 1.3-2-.5v-1l-1-1v-.8l-2-.6-2-.7-1 1.1-1 1.3-2 1.5v-.4l-1-1-2-.8-2-.8-1-1.8-3-1.8h-2l-1-2.8-3-.7h-2l-4-2.8-3 .5-2 .3-1-.3-3-1-5-1.5v-1.8l-2-.8z" id="Aran" name="Aran"/>
         <path d="m198 41.8v1.6l-1 1.9v3.4h1l-1 1.2v5l-2 1.3 2 3.2-3 .7-2-1-1 2.1-2 1.1-1 1.8 1 2.1v1.3l-3 6.5v2.4l-1 1.5v4.2h1l-1 2.9-1 .8v1.3l-2 1.4-1-.3 1 1.8v.7h3l2 1.6v5.1l1-.4 2-.4 1 4.4 3-1v2l2 2v3l1 1v1l-1 1v4l-2 1v10l4 3 1 1-3 1-1 4-2 1-1 1v3l-2 2v4l-1 1-2 2h-3l-1 1v2h1l2 3v3h3l1 2h3l2 3v-2l1 2 5-1 1 2h5l3 1v-1h1v1l3 2 2 1h1v-1l2-2v-1l-2-2h-1l-3-3 1-1v-2h5v-1l3-3 1-3v-2l3-1 2-2 4-2 2-4v-7l1-1h2v-2l-2-3 1-2 2 1 1 1 2-1h1l3-1 2 1 1-1 3-4v-3l3-1v-2l2-1v-5h1v1l3-1 2-2 1-1 2-1v-2.3l1-2.6 3-2.1v-1.8l-3-1.8v-1.6l2-.8 1-2.9v-.3l-1-1.4-2-1.1v-2.1l-2-3.4v-3.9l-1-.7-2-2.6-1-.3v-3.9l-2-1.7-3-.6-1-1.5v-4.5l-2 .3-1-1-2-.3-1 1.1h-5l-1 1.1-2-.4-1-.3-2 .7-1 .1v-.8l-2-1.8-1-.7-3 1.5-2 .1-3 .7-1 1.1-2 1.1-1-.8-2-1-1-1.8-3-1v-5.7l-2-2.1-1-1v-1.4l-3-1.7-2-1.1-1-1.3v.3l-6 1.1v-.7z" id="Pallars Sobirà" name="Pallars Sobirà"/>
         <path d="m170 78.1v1.4l-3 1.1-2 1-1 1.1-1 1.2-2 .6-1-2.1-1-1-1-.3-3 .6-5 1.1 1 .5-2 3.9v3.9l-1 2.9v2.4l-2 1.8 2 2.8-2-1-1-.7-2 2.7v2l-1 2h2l1 1-1 1v1l-3 3-1-1-1-1-1 2h-1l3 6v3l1 4 2 2 1 3-1 1v1l2 1 1 4-1 1-1 2h-2l2 2h1l2 1h1v-2l2-1 1-1h2l1 1 2 1 1 2v1h-1v1l-3 1h-2l-1-1h-2l2 1 1 1v1l3 2 2 1h1l2 2h4l3 3 2 1 3-1v-5l1-2-3-2h-1v-4l-2-2-1-1-2-1-1-1-2-4 2-2-2-3 2-2h4v-1l3-3-3-3 1-2 3 1 2-4 3-1 3-1v-5l1-1v-1l3-1v-1l2-1v-3l1-.5v-1l2-1.1v-5.1l-2-1.6h-3v-.7l-1-1.8-2-.3-1-1-2-1.5v-1.4l-1-.7-2-.3v-3.6l-2-.6z" id="Alta Ribagorça" name="Alta Ribagorça"/>
@@ -53,8 +57,28 @@
         <path d="m51.9 516h-3.4l-.7 3h-3.6l-2.1 1h-.6l-.4 2h-3.2l-.3 1v2h-.7l-.8-2-.7-1h-.3v1h.7v2l.8 1 2.7 2 1.1-2 .7 3 1.8-1h1.4l.7-2h1.8l-.4 3 1.8 5 1.1 1 1.5-1h3.9l1.1 3h2.1l.3 1-1.3 3h-1.8l-1 3v3h-.3l.3 2 .8 1h.7l.4 2 1.8 1h1.8l2.1 2 3.2 1 2.8 2 8.1-1 1.8 2h.6l.5 1 2.4 2 1.8 1h2.1l.1 2h-.8l-.3 1-.3 2 .4 1v2l1.8 1 2.1 2 3.2 1 2.5 2h3.5l.8 1 .2-1 1.2-3 1.6-3v-2l1-1 2-2h1-1l3-3 3-4 2-2 1-1 1-1-1 1 2-1-2 1 1-2v1-1h11l2-2h1l2-1h10v1h-1l-2 5-3 4h-1l-1 2h-2l-1-2v2l-2-2h-3v2h-1l-3 1h-1l-1-1h-1v3h-1l-1-2h-1v2l-1-2v4l1-1v2l2 1h6l3-1h2l3-2 1-1 1-2 2-1 7-11 1-1 1-2 4-1 2-2 7-3 3-2 1-1 2-2 1-3 2-1v-2h-8l-3 4-5 1h-2l-5-3h-1l-10-1h-1l-2-2h-3l-4 2-5 1h-2l-4-2-1-3-1-5h-1l-2 2-1-2h-4l-.2 2h-5.6l-2.5 1-1.4-1h-9.9l-5.4-5-.1-1-7 2-2.1-2-.6 3h-1.2l-1.3 2-2.6-2h-1.3l-.3-1h-.5v-3h-1.4l-.4 1-.3-1h-.3l-.3-2h.9l-.7-1zm63.1 38v1z" id="Montsià" name="Montsià"/>
     </svg>
 </div>
-<div id="comarques">
+<div id="ubicacions">
 
+</div>
+<div class="modal fade" id="victoryModal" tabindex="-1" role="dialog" aria-labelledby="victoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="victoryModalLabel">¡Victoria!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Felicitats, has completat el mapa de catalunya! T'atreveixes amb el d' Espanya?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" id="botonReinicio" class="btn btn-primary" >Reiniciar</button>
+                <button type="button" id="botonSiguienteNivel" class="btn btn-success">Siguiente Nivel</button>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
