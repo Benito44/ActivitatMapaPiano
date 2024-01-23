@@ -101,31 +101,30 @@ function posarAtributs(element, atributs) {
 
 
 const keysData = [
-    { element: document.getElementById('k65'), key: 'KeyA', soundFile: 'a1.mp3' },
-    {element: document.getElementById('k65'), key: 'KeyZ', soundFile: 'a1.mp3' },
-    { element: document.getElementById('k83'), key: 'KeyS', soundFile: 'a2.mp3' },
-	{ element: document.getElementById('k68'), key: 'KeyD', soundFile: 'b1.mp3' },
-    { element: document.getElementById('k70'), key: 'KeyF', soundFile: 'b2.mp3' },
-	{ element: document.getElementById('k71'), key: 'KeyG', soundFile: 'c1.mp3' },
-    { element: document.getElementById('k72'), key: 'KeyH', soundFile: 'c2.mp3' },
-	{ element: document.getElementById('k74'), key: 'KeyJ', soundFile: 'd1.mp3' },
-    { element: document.getElementById('k82'), key: 'KeyR', soundFile: 'd2.mp3' },
-	{ element: document.getElementById('k84'), key: 'KeyT', soundFile: 'e1.mp3' },
+    { element: document.getElementById('k65'), key: 'KeyA', soundFile: 'c1.mp3' },
+    { element: document.getElementById('k83'), key: 'KeyS', soundFile: 'd1.mp3' },
+	{ element: document.getElementById('k68'), key: 'KeyD', soundFile: 'e1.mp3' },
+    { element: document.getElementById('k70'), key: 'KeyF', soundFile: 'f1.mp3' },
+	{ element: document.getElementById('k71'), key: 'KeyG', soundFile: 'g1.mp3' },
+    { element: document.getElementById('k72'), key: 'KeyH', soundFile: 'a1.mp3' },
+	{ element: document.getElementById('k74'), key: 'KeyJ', soundFile: 'b1.mp3' },
+    { element: document.getElementById('k82'), key: 'KeyR', soundFile: 'c2.mp3' },
+	{ element: document.getElementById('k84'), key: 'KeyT', soundFile: 'd2.mp3' },
     { element: document.getElementById('k89'), key: 'KeyY', soundFile: 'e2.mp3' },
-	{ element: document.getElementById('k85'), key: 'KeyU', soundFile: 'f1.mp3' },
-	{ element: document.getElementById('k73'), key: 'KeyI', soundFile: 'f2.mp3' },
-	{ element: document.getElementById('k79'), key: 'KeyO', soundFile: 'g1.mp3' },
-	{ element: document.getElementById('k80'), key: 'KeyP', soundFile: 'g2.mp3' },
-	{ element: document.getElementById('k49'), key: 'Digit1', soundFile: 'a1s.mp3' },
-	{ element: document.getElementById('k50'), key: 'Digit2', soundFile: 'a2s.mp3' },
-	{ element: document.getElementById('k51'), key: 'Digit3', soundFile: 'c1s.mp3' },
-	{ element: document.getElementById('k52'), key: 'Digit4', soundFile: 'c2s.mp3' },
-	{ element: document.getElementById('k53'), key: 'Digit5', soundFile: 'd1s.mp3' },
-	{ element: document.getElementById('k54'), key: 'Digit6', soundFile: 'd2s.mp3' },
-	{ element: document.getElementById('k55'), key: 'Digit7', soundFile: 'f1s.mp3' },
+	{ element: document.getElementById('k85'), key: 'KeyU', soundFile: 'f2.mp3' },
+	{ element: document.getElementById('k73'), key: 'KeyI', soundFile: 'g2.mp3' },
+	{ element: document.getElementById('k79'), key: 'KeyO', soundFile: 'a2.mp3' },
+	{ element: document.getElementById('k80'), key: 'KeyP', soundFile: 'b2.mp3' },
+	{ element: document.getElementById('k49'), key: 'Digit1', soundFile: 'c1s.mp3' },
+	{ element: document.getElementById('k50'), key: 'Digit2', soundFile: 'd1s.mp3' },
+	{ element: document.getElementById('k51'), key: 'Digit3', soundFile: 'f1s.mp3' },
+	{ element: document.getElementById('k52'), key: 'Digit4', soundFile: 'g1s.mp3' },
+	{ element: document.getElementById('k53'), key: 'Digit5', soundFile: 'a1s.mp3' },
+	{ element: document.getElementById('k54'), key: 'Digit6', soundFile: 'c2s.mp3' },
+	{ element: document.getElementById('k55'), key: 'Digit7', soundFile: 'd2s.mp3' },
 	{ element: document.getElementById('k56'), key: 'Digit8', soundFile: 'f2s.mp3' },
-	{ element: document.getElementById('k57'), key: 'Digit9', soundFile: 'g1s.mp3' },
-	{ element: document.getElementById('k48'), key: 'Digit0', soundFile: 'g2s.mp3' },
+	{ element: document.getElementById('k57'), key: 'Digit9', soundFile: 'g2s.mp3' },
+	{ element: document.getElementById('k48'), key: 'Digit0', soundFile: 'a2s.mp3' },
 ];
 
 
@@ -140,7 +139,7 @@ function playSound(sound) {
 function init() {
     const keyIds = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 
-    const soundFiles = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2', 'd1', 'd2', 'e1', 'e2', 'f1', 'f2', 'g1', 'g2', 'a1s', 'a2s', 'c1s', 'c2s', 'd1s', 'd2s', 'f1s', 'f2s', 'g1s', 'g2s'];
+    const soundFiles = ['c1', 'd1', 'e1', 'f1', 'g1', 'a1', 'b1', 'c2', 'd2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c1s', 'd1s', 'f1s', 'g1s', 'a1s', 'c2s', 'd2s', 'f2s', 'g2s', 'a2s'];
     // Crear los audios
     for (let i = 0; i < keyIds.length; i++) {
         const audioElement = document.createElement('audio');
